@@ -1,0 +1,46 @@
+{% extends "TWAAdminBundle::layout.html.twig" %}
+ {#
+    comme layout est directement dans le dossier
+    views du TWABlogBundle, pas besoin de spécifier
+    un chemin plus précis
+#}
+{% block title %}
+    {{ parent() }} Tableau de bord
+    {#
+        la notation {{ parent()  }}  permet de 'concatener'
+        le texte écrit dans le bloc title du layout
+    #}
+
+{% endblock %}
+
+{% block content %}
+    <p><a href="{{ path('twa_ab_article_add') }}">Ajouter un article</a></p>
+    <table>
+        <thead>
+        <tr>
+            <th>Id</th>
+            <th>Titre</th>
+            <th>Texte de l'article</th>
+            <th>Date</th>
+            <th></th>
+            <th></th>
+        </tr>
+        </thead>
+        <tbody>
+        {% for article in articlesList %}
+            <tr>
+                <td>{{ article.articleId }}</td>
+                <td>{{ article.articleTitle }}</td>
+                <td>{{ article.articleContent }}</td>
+                <td>{{ article.articleDate|date('d/m/y') }}</td>
+                <td><a href="{{ path('twa_ab_article_edit', { 'articleId': article.articleId }) }}">Modifier</a></td>
+                <td><a href="{{ path('twa_ab_article_delete', { 'articleId': article.articleId }) }}">Supprimer</a></td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="3">Aucun article</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+{% endblock %}

@@ -1,0 +1,8 @@
+twa_admin:
+    resource: "@TWAAdminBundle/Resources/config/routing.yml"
+    prefix:   /
+
+twa_blog:
+    resource: "@TWABlogBundle/Resources/config/routing.yml"
+    prefix:   /
+

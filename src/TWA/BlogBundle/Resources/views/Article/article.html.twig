@@ -1,0 +1,25 @@
+{% extends "TWABlogBundle::layout.html.twig" %}
+  {#
+    comme layout est directement dans le dossier
+    views du TWABlogBundle, pas besoin de spécifier
+    un chemin plus précis
+#}
+{% block title %}
+{{ parent()  }}  historique d'un article
+ {#
+    la notation {{ parent()  }}  permet de 'concatener'
+    le texte écrit dans le bloc title du layout
+ #}
+{% endblock %}
+
+{% block content %}
+
+    <h1>Article Id recherchée = {{ article.articleId }}</h1>
+
+        <h2> Article=id {{ article.articleId }} correspond bien à un article de la base</h2>
+        <h4>date de l'article {{ article.articleDate|date("d/m/y") }}</h4>
+        <h3>Titre de l'article: {{ article.articleTitle }}</h3>
+        <p>texte de l'article:  {{ article.articleContent }}</p>
+
+
+{% endblock %}

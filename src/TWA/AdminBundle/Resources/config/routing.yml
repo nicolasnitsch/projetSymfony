@@ -1,0 +1,17 @@
+twa_ab_dashboard:
+    path:    /admin
+    defaults: { _controller: TWAAdminBundle:Page:dashboard }
+
+twa_ab_article_edit:
+    path:    /admin
+    defaults: { _controller: TWAAdminBundle:Article:edit }
+    requirements:
+        articleId: \d+
+
+twa_ab_article_add:
+    path:      /admin/article/add
+    defaults:  { _controller: TWAAdminBundle:Article:add }
+
+twa_ab_article_delete:
+    path:     /admin/article/delete/{articleId}
+    defaults: { _controller: TWAAdminBundle:Article:delete }

@@ -1,0 +1,21 @@
+twa_bb_homepage:
+    path:      /
+    defaults:  { _controller: TWABlogBundle:Page:index }
+
+twa_bb_articles_list:
+    path:      /articles
+    defaults:  { _controller: TWABlogBundle:Article:list }
+
+twa_bb_article_single:
+    path:     /article/{articleId}
+    #
+    defaults: { _controller: TWABlogBundle:Article:show }
+    requirements:
+        articleId: \d+
+        #requirements introduit une restriction
+        #8 indentations
+        #\d+ est du regex qui veut dire tous les nombres
+twa_bb_contact:
+    path:     /contact
+    defaults: { _controller: TWABlogBundle:Page:contact }
+

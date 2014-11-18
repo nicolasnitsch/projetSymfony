@@ -1,0 +1,21 @@
+{% extends "::base.html.twig" %}
+
+{% block title %}
+    Exercice Blog
+{% endblock %}
+
+
+
+{% block body %}
+<nav>
+    <ul>
+        <li><a href="{{ path("twa_bb_homepage") }}" >Accueil</a></li>
+        <li><a href="{{ path("twa_bb_articles_list") }}" >Articles</a></li>
+        <li><a href="{{ path("twa_bb_contact") }}" >Contact</a></li>
+    </ul>
+
+</nav>
+
+    {% block content %} {% endblock %}
+
+{% endblock %}

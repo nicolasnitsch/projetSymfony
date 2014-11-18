@@ -1,0 +1,20 @@
+{% extends "::base.html.twig" %}
+
+{% block title %}
+    Exercice Blog
+{% endblock %}
+
+
+
+{% block body %}
+<nav>
+    <ul>
+        <li><a href="{{ path("twa_ab_dashboard") }}" >Tableau de board</a></li>
+        <li><a href="#" >Catégories</a></li>
+    </ul>
+
+</nav>
+
+    {% block content %} {% endblock %}
+
+{% endblock %}

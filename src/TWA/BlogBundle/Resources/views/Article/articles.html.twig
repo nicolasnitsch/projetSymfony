@@ -1,0 +1,26 @@
+{% extends "TWABlogBundle::layout.html.twig" %}
+ {#
+    comme layout est directement dans le dossier
+    views du TWABlogBundle, pas besoin de spécifier
+    un chemin plus précis
+#}
+{% block title %}
+    {{ parent() }} Liste des articles
+    {#
+        la notation {{ parent()  }}  permet de 'concatener'
+        le texte écrit dans le bloc title du layout
+    #}
+
+{% endblock %}
+
+{% block content %}
+    <h1>Liste des articles</h1>
+    <ul>
+        {% for toto in articlesList %}
+            <li>{{ toto.articleTitle }}: {{ toto.articleContent }}</li>
+        {% else %}
+            <li>Il n'y a pas d'articles</li>
+        {% endfor %}
+
+    </ul>
+{% endblock %}

@@ -1,0 +1,4 @@
+services:
+#    twa_blog.example:
+#        class: TWA\BlogBundle\Example
+#        arguments: [@service_id, "plain_value", %parameter%]

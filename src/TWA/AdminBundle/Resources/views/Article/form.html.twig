@@ -1,0 +1,23 @@
+{% extends "TWAAdminBundle::layout.html.twig" %}
+ {#
+    comme layout est directement dans le dossier
+    views du TWABlogBundle, pas besoin de spécifier
+    un chemin plus précis
+#}
+{% block title %}
+    {{ parent() }} Nouveau formulaire
+    {#
+        la notation {{ parent()  }}  permet de 'concatener'
+        le texte écrit dans le bloc title du layout
+    #}
+
+{% endblock %}
+
+
+
+{% block content %}
+    <h1>Formulaire</h1>
+
+    {{ form(articleForm) }}
+
+{% endblock %}
